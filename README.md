@@ -42,6 +42,29 @@ npm run test
 npm run test:coverage
 ```
 
+## Test coverage
+Backend (pytest-cov):
+```
+cd backend
+python3.11 -m pytest --cov=apps --cov=config --cov-report=term-missing
+```
+
+Latest backend summary:
+```
+TOTAL 504 statements, 92% coverage
+```
+
+Frontend (vitest):
+```
+cd frontend
+npm run test:coverage
+```
+
+Latest frontend summary:
+```
+All files 91.09% statements, 72.37% branches, 87.30% functions, 90.97% lines
+```
+
 ## Summary of My Process
 This project was built using a **design-first, behavior-driven approach**. I began by translating the Figma designs into strict layout constraints (fixed widths, spacing, typography, and alignment) before implementing any data or API logic.
 
