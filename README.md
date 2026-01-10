@@ -46,28 +46,29 @@ npm run test:coverage
 Backend (pytest-cov):
 ```
 cd backend
-python3.11 -m pytest --cov=apps --cov=config --cov-report=term-missing
+python3.11 -m pytest --cov=apps --cov=config --cov-branch --cov-report=term-missing
 ```
 
-Latest backend summary (pytest-cov):
+Latest backend summary (pytest-cov with branch coverage):
 ```
-TOTAL 504 statements, 92% coverage
+TOTAL 504 statements, 91% coverage
 ```
 
-Backend coverage table (pytest-cov, statements/branches from coverage.py; funcs not reported):
+Backend coverage table (pytest-cov, branch coverage enabled):
 
-| File | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
-| --- | --- | --- | --- | --- | --- |
-| apps/notes/management/commands/cleanup_empty_notes.py | 0% | n/a | n/a | 0% | 1-14 |
-| apps/notes/models.py | 91% | n/a | n/a | 91% | 17, 40 |
-| apps/notes/serializers.py | 91% | n/a | n/a | 91% | 38, 43, 67, 77 |
-| apps/notes/views.py | 93% | n/a | n/a | 93% | 56-57, 69-70 |
-| apps/users/models.py | 68% | n/a | n/a | 68% | 9, 17-26, 41 |
-| apps/users/serializers.py | 95% | n/a | n/a | 95% | 26 |
-| apps/users/views.py | 95% | n/a | n/a | 95% | 60, 73 |
-| config/asgi.py | 0% | n/a | n/a | 0% | 1-7 |
-| config/wsgi.py | 0% | n/a | n/a | 0% | 1-7 |
-| TOTAL | 92% | n/a | n/a | 92% |  |
+| File | Stmts | Miss | Branch | BrPart | Cover | Missing |
+| --- | --- | --- | --- | --- | --- | --- |
+| apps/notes/management/commands/cleanup_empty_notes.py | 7 | 7 | 0 | 0 | 0% | 1-14 |
+| apps/notes/models.py | 22 | 2 | 0 | 0 | 91% | 17, 40 |
+| apps/notes/serializers.py | 47 | 4 | 12 | 4 | 86% | 38, 43, 67, 77 |
+| apps/notes/views.py | 60 | 4 | 2 | 1 | 92% | 29->31, 56-57, 69-70 |
+| apps/users/models.py | 31 | 10 | 6 | 1 | 59% | 9, 17-26, 41 |
+| apps/users/serializers.py | 22 | 1 | 4 | 1 | 92% | 26 |
+| apps/users/views.py | 43 | 2 | 2 | 1 | 93% | 60, 73 |
+| config/middleware.py | 17 | 0 | 4 | 1 | 95% | 14->17 |
+| config/asgi.py | 4 | 4 | 0 | 0 | 0% | 1-7 |
+| config/wsgi.py | 4 | 4 | 0 | 0 | 0% | 1-7 |
+| TOTAL | 504 | 38 | 34 | 9 | 91% |  |
 
 Frontend (vitest):
 ```
