@@ -16,6 +16,7 @@ node_modules/
 .next/
 out/
 .npmrc
+coverage/
 
 # OS
 .DS_Store

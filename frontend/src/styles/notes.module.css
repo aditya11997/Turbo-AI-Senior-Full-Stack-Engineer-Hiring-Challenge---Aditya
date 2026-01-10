@@ -1,0 +1,389 @@
+.page {
+  min-height: 100vh;
+  background: #fff7eb;
+  display: flex;
+  justify-content: center;
+}
+
+.notesContainer {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 40px;
+}
+
+.layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 240px 935px;
+  grid-template-rows: auto 1fr;
+  column-gap: 32px;
+  row-gap: 24px;
+  align-items: start;
+}
+
+.sidebarHeader {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  font-weight: 700;
+  font-size: 14px;
+  color: #3a2b17;
+}
+
+.mainHeader {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.categoryItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.categoryLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.main {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  position: relative;
+}
+
+.newNoteButton {
+  width: 133px;
+  height: 43px;
+  padding: 12px 16px;
+  border-radius: 46px;
+  border: 1px solid #957139;
+  background: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  color: #957139;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.newNoteButton[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.newNoteIcon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(149, 113, 57, 0.4);
+  border-top-color: #957139;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.error {
+  margin-top: 12px;
+  color: #8a2b2b;
+  font-size: 12px;
+}
+
+.emptyState {
+  color: #5a4630;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  pointer-events: none;
+  min-height: 520px;
+}
+
+.emptyImage {
+  display: block;
+  max-width: 260px;
+}
+
+.emptyText {
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #88642a;
+  max-width: 522px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.notesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 303px);
+  gap: 13px;
+  justify-content: start;
+  align-content: start;
+  width: 935px;
+}
+
+.noteCard {
+  width: 303px;
+  height: 246px;
+  padding: 16px;
+  border-radius: 11px;
+  border: 3px solid #ef9c66;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.noteCard:hover {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.noteContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.noteHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.noteHeaderDate {
+  font-weight: 700;
+}
+
+.noteHeaderCategory {
+  font-weight: 400;
+}
+
+.noteTitle {
+  font-family: var(--font-inria), serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px 0;
+  line-height: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.noteBody {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+  line-height: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1 1 auto;
+  padding-bottom: 2px;
+}
+
+.editor {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.input {
+  padding: 10px 12px;
+  border: 1px solid #957139;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.textarea {
+  min-height: 240px;
+  resize: vertical;
+}
+
+.statusRow {
+  font-size: 12px;
+  color: #6b5539;
+  min-height: 18px;
+}
+
+.saveError {
+  color: #8a2b2b;
+}
+
+/* ---------- Editor ( /notes/[id] ) ---------- */
+
+.editorTopRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 33px;
+  padding-left: 37px;
+  padding-right: 37px;
+}
+
+.categoryDropdown {
+  width: 225px;
+  height: 39px;
+  border: 1px solid #b8895a;
+  border-radius: 8px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+.categoryDropdownLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.categoryDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+}
+
+.categoryDropdownText {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.chev {
+  font-size: 20px;
+  line-height: 1;
+  color: #b8895a;
+  transform: translateY(-1px);
+}
+
+.closeButton {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  color: #b8895a;
+  font-size: 28px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.editorCard {
+  margin-top: 12px;
+  margin-left: 37px;
+  margin-right: 37px;
+  width: 1199px;
+  max-width: calc(100% - 74px);
+  height: 700px;
+  background: rgba(239, 156, 102, 0.5);
+  border: 3px solid #ef9c66;
+  border-radius: 11px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.editorCardInner {
+  height: 100%;
+  padding: 39px 64px 64px 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lastEdited {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+  align-self: flex-end;
+}
+
+.noteTitleInput {
+  margin-top: 24px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-inria), serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000000;
+}
+
+.noteBodyWrap {
+  margin-top: 16px;
+  flex: 1;
+  overflow: auto;
+}
+
+.noteBodyTextarea {
+  width: 100%;
+  min-height: 200px;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #000000;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

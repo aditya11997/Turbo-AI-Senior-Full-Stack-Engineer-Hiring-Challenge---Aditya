@@ -1,0 +1,133 @@
+.page {
+  min-height: 100vh;
+  background: #fff7eb;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 384px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-inria), serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1;
+  color: #88642a;
+  text-align: center;
+}
+
+.fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field {
+  width: 384px;
+  height: 39px;
+  border-radius: 6px;
+  border: 1px solid #957139;
+  padding: 7px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  position: relative;
+}
+
+.input {
+  height: 100%;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #000000;
+  padding: 0;
+}
+
+.passwordInput {
+  padding-right: 40px;
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.field:focus-within {
+  box-shadow: 0 0 0 2px rgba(149, 113, 57, 0.25);
+}
+
+.eyeButton {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.eyeIcon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/assets/eye.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.submit {
+  width: 384px;
+  height: 39px;
+  border-radius: 999px;
+  border: 1px solid #957139;
+  background: transparent;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #88642a;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: rgba(149, 113, 57, 0.08);
+}
+
+.submit[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  min-height: 16px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  color: #8a2b2b;
+  text-align: center;
+}
+
+.helper {
+  border: none;
+  background: transparent;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #957139;
+  text-decoration: underline;
+  cursor: pointer;
+}

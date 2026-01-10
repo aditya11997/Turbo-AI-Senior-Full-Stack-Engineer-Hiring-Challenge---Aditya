@@ -1,57 +1,171 @@
 .page {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 1.5rem;
 }
 
-.card {
-  width: min(480px, 100%);
-  background: var(--surface);
-  border-radius: 24px;
-  padding: 2.5rem;
-  border: 1px solid var(--border);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+.frame {
+  position: relative;
+  width: 1280px;
+  height: 832px;
+  overflow: hidden;
 }
 
-.card h1 {
-  margin: 0 0 0.5rem 0;
-  font-size: 2rem;
+.title {
+  position: absolute;
+  top: 340px;
+  left: 459px;
+  width: 362px;
+  height: 58px;
+  font-family: var(--font-inria), serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 100%;
+  color: var(--title);
+  margin: 0;
 }
 
-.subtitle {
-  margin: 0 0 2rem 0;
-  color: rgba(31, 31, 31, 0.7);
+.catImage {
+  position: absolute;
+  top: 193px;
+  left: 535px;
+  width: 188.14px;
+  height: 134px;
 }
 
 .form {
-  display: grid;
-  gap: 1.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 832px;
 }
 
 .field {
-  display: grid;
-  gap: 0.5rem;
-  font-weight: 600;
+  position: absolute;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: #000000;
+  width: 384px;
+  height: 39px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .field input {
-  padding: 0.85rem 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 7px 15px;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  font-size: 1rem;
+  border-radius: 6px;
+  background: transparent;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: #000000;
 }
 
-.submit {
-  padding: 0.9rem 1rem;
-  border-radius: 999px;
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.inputWrapper input {
+  width: 100%;
+  height: 100%;
+  padding-right: 40px;
+}
+
+.visibilityToggle {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
   border: none;
-  background: var(--accent);
-  color: white;
-  font-weight: 700;
+  background: transparent;
+  padding: 0;
   cursor: pointer;
 }
 
-.submit:hover {
-  background: #ff5531;
+.visibilityIcon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/assets/eye.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.error {
+  position: absolute;
+  left: 448px;
+  top: 540px;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: #8a2b2b;
+  margin: 0;
+}
+
+.submit {
+  position: absolute;
+  left: 448px;
+  top: 568px;
+  width: 384px;
+  height: 43px;
+  border-radius: 46px;
+  border: 1px solid var(--border);
+  background: transparent;
+  padding: 12px 16px;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  color: var(--border);
+  cursor: pointer;
+}
+
+.link {
+  position: absolute;
+  display: block;
+  top: 624px;
+  left: 578px;
+  width: 123px;
+  height: 15px;
+  text-align: left;
+  white-space: nowrap;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: normal;
+  color: var(--border);
+  text-decoration: underline;
+}
+
+.emailField {
+  left: 448px;
+  top: 435.5px;
+}
+
+.passwordField {
+  left: 448px;
+  top: 486.5px;
 }

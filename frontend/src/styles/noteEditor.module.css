@@ -1,0 +1,206 @@
+.page {
+  min-height: 100vh;
+  background: #fff7eb;
+}
+
+.editorContainer {
+  width: 100%;
+  max-width: 935px;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.categoryWrap {
+  display: inline-flex;
+  position: relative;
+}
+
+.categoryButton {
+  width: 225px;
+  height: 39px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #c89b6d;
+  background: #fff7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.categoryButtonLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.categoryDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+}
+
+.categoryLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2b2b2b;
+}
+
+.chevronButton {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b6a3e;
+}
+
+.chevronIcon {
+  width: 24px;
+  height: 24px;
+  transition: transform 160ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 225px;
+  background: #fff3e3;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 4px 0;
+  z-index: 5;
+}
+
+.dropdownItem {
+  height: 32px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdownItem:hover {
+  background: #ffe8d2;
+}
+
+.dropdownDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+}
+
+.dropdownLabel {
+  font-size: 14px;
+  font-weight: 400;
+  color: #2b2b2b;
+}
+
+.closeButton {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #8b6a3e;
+  padding: 8px;
+}
+
+.card {
+  width: 100%;
+  min-height: 520px;
+  max-height: 640px;
+  border-radius: 12px;
+  border: 3px solid #ef9c66;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+}
+
+.lastEdited {
+  font-size: 12px;
+  color: #000;
+}
+
+.lastEditedRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.saveHint {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.saveError {
+  font-size: 12px;
+  color: #b00020;
+}
+
+.titleInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-inria), serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #000000;
+  resize: none;
+  overflow: hidden;
+  line-height: 24px;
+}
+
+.bodyInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #000000;
+  flex: 1;
+  min-height: 200px;
+  overflow-y: auto;
+}
+
+.errorBox {
+  color: #000;
+  background: rgba(255, 0, 0, 0.08);
+  padding: 12px;
+  border-radius: 8px;
+}
