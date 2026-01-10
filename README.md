@@ -49,10 +49,25 @@ cd backend
 python3.11 -m pytest --cov=apps --cov=config --cov-report=term-missing
 ```
 
-Latest backend summary:
+Latest backend summary (pytest-cov):
 ```
 TOTAL 504 statements, 92% coverage
 ```
+
+Backend coverage table (pytest-cov, statements/branches from coverage.py; funcs not reported):
+
+| File | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+| --- | --- | --- | --- | --- | --- |
+| apps/notes/management/commands/cleanup_empty_notes.py | 0% | n/a | n/a | 0% | 1-14 |
+| apps/notes/models.py | 91% | n/a | n/a | 91% | 17, 40 |
+| apps/notes/serializers.py | 91% | n/a | n/a | 91% | 38, 43, 67, 77 |
+| apps/notes/views.py | 93% | n/a | n/a | 93% | 56-57, 69-70 |
+| apps/users/models.py | 68% | n/a | n/a | 68% | 9, 17-26, 41 |
+| apps/users/serializers.py | 95% | n/a | n/a | 95% | 26 |
+| apps/users/views.py | 95% | n/a | n/a | 95% | 60, 73 |
+| config/asgi.py | 0% | n/a | n/a | 0% | 1-7 |
+| config/wsgi.py | 0% | n/a | n/a | 0% | 1-7 |
+| TOTAL | 92% | n/a | n/a | 92% |  |
 
 Frontend (vitest):
 ```
@@ -64,6 +79,22 @@ Latest frontend summary:
 ```
 All files 91.09% statements, 72.37% branches, 87.30% functions, 90.97% lines
 ```
+
+Frontend coverage table (vitest v8):
+
+| File | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+| --- | --- | --- | --- | --- | --- |
+| All files | 91.09 | 72.37 | 87.30 | 90.97 |  |
+| app/layout.tsx | 100 | 100 | 100 | 100 |  |
+| app/(auth)/login/page.tsx | 95.45 | 83.33 | 85.71 | 95.23 | 95 |
+| app/(auth)/signup/page.tsx | 100 | 100 | 100 | 100 |  |
+| app/notes/page.tsx | 91.83 | 59.09 | 90.90 | 91.83 | 77,84-85,100 |
+| app/notes/[id]/page.tsx | 87.76 | 65.97 | 87.50 | 87.59 | 70,81,84,108,139-143,148-149,173,192,205-208,211,277,285,406 |
+| components/auth/PasswordField.tsx | 100 | 100 | 100 | 100 |  |
+| components/auth/SignupForm.tsx | 100 | 66.66 | 100 | 100 | 27-30 |
+| components/auth/TextField.tsx | 100 | 100 | 100 | 100 |  |
+| lib/api.ts | 89.18 | 87.09 | 57.14 | 89.18 | 62,89-91,102 |
+| lib/auth.ts | 100 | 90 | 100 | 100 | 10 |
 
 ## Summary of My Process
 This project was built using a **design-first, behavior-driven approach**. I began by translating the Figma designs into strict layout constraints (fixed widths, spacing, typography, and alignment) before implementing any data or API logic.
